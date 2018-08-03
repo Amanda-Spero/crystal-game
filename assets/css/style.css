@@ -1,21 +1,82 @@
-background {
-    color: rgb(97, 155, 170)
-    
+
+#screen {
+    overflow: auto;
 }
 
-.button {
-
-    padding: 5px;
-    color: rgb(163, 184, 88)
-    
+#screen div {
+    float: left;
 }
 
-#number-box {
-    height: 40px;
-    background-color: aqua;
+h1 {
+    width: 400px;
+    padding: 4px;
+    margin-bottom: 10px;
+    margin-left: 40%;
+}
+
+#directions {
+    width: 800px;
+    height: 300px;
+    padding: 4px;
+    margin-left: 15%;
+
 
 }
 
-card {
-    background-color: blueviolet;
+#random-area {
+    width: 200px;
+    height: 100px;
+    padding: 4px;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 20%;
+
+}
+
+#score-area {
+    width: 210px;
+    height: 100px;
+    padding: 4px;
+    margin-left: 52%;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+#score-title {
+    width: 210px;
+    padding: 4px;
+    margin-bottom: 10px;
+    margin-left: 40%;
+    margin-top: 3%;
+    font-size: 25px;
+
+}
+
+.crystals-button {
+    display: inline;
+    margin-left: 15%;
+}
+
+.crystal-img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+#score-number {
+    font-size: 30px;
+
+}
+
+#win-area {
+    height: 100px;
+    padding: 4px;
+    margin-bottom: 40px;
+    margin-left: 20%;
+    font-size: 25px;
+
+}
+h4 {
+    text-align: center
 }
