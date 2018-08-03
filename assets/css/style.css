@@ -1,0 +1,21 @@
+background {
+    color: rgb(97, 155, 170)
+    
+}
+
+.button {
+
+    padding: 5px;
+    color: rgb(163, 184, 88)
+    
+}
+
+#number-box {
+    height: 40px;
+    background-color: aqua;
+
+}
+
+card {
+    background-color: blueviolet;
+}

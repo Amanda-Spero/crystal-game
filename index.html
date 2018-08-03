@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Crystals Collector</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"-->
+
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <div class="jumbotron">
+
+        <h1 class="text-center">Crystals Collector!</h1>
+    </div>
+    <div class="card">
+        <div id="directions">
+          <p>You will be given a random number at the start of the game</p>
+          <p></p>
+          <p>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</p>
+          <p></p>
+          <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+          <p></p>
+          <p>The value of each crystal is hidden from you until you cllick on it.</p>
+          <p></p>
+          <p>Each time the game starts the game will change the values of each crystal.</p>
+          
+      </div>
+
+      <div class="card">
+          <div id="number-box"></div>
+      </div>
+
+      <div class="card" id="score-box">
+          <div row="wins-Box">Wins: 0</div>
+          <div row="losses-Box">Losses: 0</div>
+      </div>
+
+      <div class="row">
+            <button class="col" id="crystal1">Crystal1</button>           
+            <button class="col" id="crystal2">Crystal2</button>
+            <button class="col" id="crystal3">Crystal3</button>
+            <button class="col" id="crystal4">Crystal4</button>
+
+
+          </div>
+      </div>
+      <div class="card">
+          <div id="totalWords">Your total score is:
+
+          </div>
+      </div>
+      <div class="card">
+          <div id="totalNumber">0
+
+          </div>
+      </div>
+
+<style>
+
+
+.btn {
+
+    margin: 10px;
+    color: rgb(26, 71, 100);
+    background-color: rgb(180, 48, 88)
+    
+}
+
+#number-box {
+    background-color: rgb(125, 180, 125);
+    width: 100px;
+    height: 80px; 
+    font-size: 30px;
+    font-style: bold;
+}
+
+#score-box {
+    background-color:rgb(166, 172, 226);
+    width: 100px;
+    height: 90px;    
+   
+}
+
+</style>
+
+<script type="text/javascript">
+
+    var randomNumber =  Math.floor(Math.random() * 120) + 19;
+    var crystal1Nr = Math.floor(Math.random() * 12) + 1;
+    var crystal2Nr = Math.floor(Math.random() * 12) + 1;
+    var crystal3Nr = Math.floor(Math.random() * 12) + 1;
+    var crystal4Nr = Math.floor(Math.random() * 12) + 1;
+    var wins = 0;
+    var losses = 0;
+    var userTotal = 0;
+
+    //var imageCrystal1 = $("#crystal1");
+    //var imageCrystal2 = $("#crystal2");
+    //var imageCrystal3 = $("#crystal3");
+    //var imageCrystal4 = $("#crystal4");
+    //randomNumber.attr("data-crystalValue", bigNr);
+    //crystalValue = ($(this).attr("data-crystalvalue"));
+    //crystalValue = parseInt(crystalValue);
+    
+   //start game
+    $(document).ready(function() {
+        startGame();
+    }) 
+     
+    
+    function startGame(){
+        var userTotal = 0;
+        //randomNumber.addClass("number");
+        //randomNumber.text($(this).attr("data-number"));
+       parseInt(randomNumber);
+            document.getElementById("number-box").innerHTML=randomNumber;
+        //$("#number-box").innerHTML(randomNumber);
+            console.log(randomNumber);
+        parseInt(crystal1Nr);
+        //$("#crystal1") = crystal1Nr;
+            document.getElementById("crystal1").attr=crystal1Nr;
+            console.log(crystal1Nr);
+        //$("#crystal2") = crystal2Nr;
+        parseInt(cyrstal2Nr);                
+             document.getElementById("crystal2").attr=crystal2Nr;
+             console.log(crystal2Nr);
+        //$("#crystal3") = crystal3Nr;
+        parseInt(cyrstal3Nr);
+            document.getElementById("crystal3").attr=crystal3Nr;
+            console.log(crystal3Nr);
+        //$("#crystal4") = crystal4Nr;
+        parseInt(cyrstal4Nr);
+            document.getElementById("crystal4").attr=crystal4Nr;
+            console.log(crystal4Nr);
+}
+      
+
+$("#crystal1").click(function() {
+    userTotal+=crystal1Nr;
+    $("#totalNumber").html(userTotal);    
+    console.log(crystal1Nr);
+    });
+
+    $("#crystal2").click(function() {
+    userTotal+=crystal2Nr;
+    $("#totalNumber").html(userTotal);    
+    console.log(crystal2Nr);
+    });
+    
+    $("#crystal3").click(function() {
+    userTotal+=crystal3Nr;
+    $("#totalNumber").html(userTotal);   
+    console.log(crystal3Nr);
+    });
+    
+    $("#crystal4").click(function() {
+    userTotal+=crystal4Nr;
+    $("#totalNumber").html(userTotal);
+    console.log(crystal4Nr);
+    });
+
+
+    if (userTotal === randomNumber) {
+        alert("You win!");
+        wins++;
+        restart ()
+    }
+    else if (userTotal >= randomNumber) {
+        alert("You lose!");
+        losses++;
+        restart();
+    }
+
+
+
+    function restart() {
+        startGame();
+    }
+
+
+    //if equal to random number, win, wins++
+    
+    //if over random number, lost, lose--
+    
+    //in either case, restart game
+  
+
+</script>
+</body>
+</html>
