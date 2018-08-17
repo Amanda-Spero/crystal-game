@@ -1,4 +1,4 @@
-# week-4-game
+# crystal-game
 
 The object of this game is to reach the random number generated without going over.
 
